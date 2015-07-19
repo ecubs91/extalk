@@ -31,13 +31,16 @@
   font-size: 17px; 
   font-weight: 700;
 }
+
 .jumbotron {
 }
+
 .homepage {
   background-image: url("http://7xkbd8.com1.z0.glb.clouddn.com/pages1542768438.jpg");
   background-size: cover;
-  width:100%;
-  h1, h2 {
+   width:100%;}
+
+h1, h2 {
   font-family: guardian-egyptt, georgia, serif;
   color: #FFFFFF;
   text-align: center;
