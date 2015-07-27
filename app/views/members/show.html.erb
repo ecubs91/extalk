@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @member.language_id %>
+</p>
+
+<p>
+  <strong>Wish lang:</strong>
+  <%= @member.wish_lang %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @member.country %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @member.city %>
+</p>
+
+<p>
+  <strong>Interest:</strong>
+  <%= @member.interest %>
+</p>
+
+<p>
+  <strong>Weixin:</strong>
+  <%= @member.weixin %>
+</p>
+
+<p>
+  <strong>Skype:</strong>
+  <%= @member.skype %>
+</p>
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>
