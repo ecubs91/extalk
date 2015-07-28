@@ -4,9 +4,14 @@ class MembersController < ApplicationController
   before_filter :check_user, only: [:edit, :update, :destroy]
   
   respond_to :html
-
+   
   def index
-    @members = Member.all
+    if params[:language].blank?       
+      @members = Member.all
+    else
+       @language_id = Language.find_by(name: params[:language]).id
+       @members = Member.where(language_id: @language_id).order("created_at DESC")
+    end        
     respond_with(@members)
   end
 
@@ -49,8 +54,8 @@ class MembersController < ApplicationController
     end
    
     def check_user
-      if current_user != @listing.user
-        redirect_to root_url, alert: "Sorry, this listing belongs to someone else"
+      if current_user != @member.user
+        redirect_to root_url, alert: "Sorry, this member belongs to someone else"
       end
     end
 end

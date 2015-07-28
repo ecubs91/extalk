@@ -1,37 +1,100 @@
-<h1>Listing members</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Language</th>
-      <th>Wish lang</th>
-      <th>Country</th>
-      <th>City</th>
-      <th>Interest</th>
-      <th>Weixin</th>
-      <th>Skype</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="containermember">
+  <br>  
+<div class="row">
+  <div class="col-md-3 col-sm-4">
+     <div class="searchbox">
+     <div class="list-group">
+          <a href="#" class="list-group-item active" style="font-size:20px">
+            Language
+          </a>
+   <% Language.all.each do |language| %>
+          <div class="list-group-item">
+             <%= link_to language.name, members_path(language: language.name) %>
+          </div>
+          <% end %> 
+        </div>
+    
+        
+        <span class="glyphicon glyphicon-search" style="font-size:25px;color:#ea6779;margin-top:5px"></span>
+     </div>            
+  </div>
+  <!------------- Right Panel for search results------------>
+  <div class="col-md-9 col-sm-7">
     <% @members.each do |member| %>
-      <tr>
-        <td><%= member.language_id %></td>
-        <td><%= member.wish_lang %></td>
-        <td><%= member.country %></td>
-        <td><%= member.city %></td>
-        <td><%= member.interest %></td>
-        <td><%= member.weixin %></td>
-        <td><%= member.skype %></td>
-        <td><%= link_to 'Show', member %></td>
-        <td><%= link_to 'Edit', edit_member_path(member) %></td>
-        <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="memberbox">
+         <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12">         
+            <div class="round-avatar"></div>
+           <center>
+             <h4><%= member.user.first_name %></h4>
+              <h4><%= member.country %> | <%= member.city %></h4>
+           </center>
+           <% if member.user==current_user %>
+           <%= link_to 'Edit', edit_member_path(member) %>
+           <%= link_to t('Destroy'), member, style: "text-align:center", class: "linkbutton", method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+        <div class="col-md-8 col-sm-8 col-xs-12">       
+          <h4>
+           <div class="row">
+                <div class="col-md-3">
+                   母语
+                </div>
+                <div class="col-md-9">
+                   <%= member.language.name %>
+                </div>
+           </div>
+             <br>
+           <div class="row">
+                <div class="col-md-3">
+                   希望学习
+                </div>
+                <div class="col-md-9">
+                   <%= member.wish_lang %>
+                </div>
+           </div>    
+             <br>
+           <div class="row">
+                <div class="col-md-3">
+                   兴趣爱好
+                </div>
+                <div class="col-md-9">
+                   <%= member.interest %>
+                </div>
+           </div>    
+            <Br>
+           <div class="row">
+                <div class="col-md-3">
+                   联系方式
+                </div>
+              <% if member.weixin.present? %> 
+                <div class="col-md-3">            
+                   <img src="http://7xkbd8.com1.z0.glb.clouddn.com/pageswebwxgetmsgimg%20(1).jpg" style="float:left" class="img-circle">&nbsp;&nbsp;<%= member.weixin %></p1>
+                </div>
+              <% end %>
+              <% if member.skype.present? %> 
+                <div class="col-md-3">
+                   <img src="http://7xkbd8.com1.z0.glb.clouddn.com/pageswebwxgetmsgimg.jpg" style="float:left" class="img-circle">&nbsp;&nbsp;<%= member.skype %>
+                </div>               
+              <% end %>
+           </div>    
+           </h4>          
+        </div>                            
+      </div>
+     </div>
+     <div class="row" style="background: #f5f5f5; margin-right: 10px; margin-left:1px; border-radius:5px;border-top: 2px solid #E5E5E5">
+        <p style="font-size:18px;text-align:center;padding-top:5px">""</p>
+     </div>
+     <br>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
+       
+<br>
 
 <br>
+</div>
+
+
 
 <%= link_to 'New Member', new_member_path %>

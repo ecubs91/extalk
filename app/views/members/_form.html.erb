@@ -11,10 +11,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :language_id %><br>
-    <%= f.number_field :language_id %>
-  </div>
+  <div class="form-group">
+     <%= f.label :Mother_Language %><br>
+     <%= f.collection_select :language_id, Language.all, :id, :name, {prompt: "Choose a cateogory"}, {class: "btn btn-default dropdown-toggle"} %>
+          </div>
   <div class="field">
     <%= f.label :wish_lang %><br>
     <%= f.text_field :wish_lang %>
