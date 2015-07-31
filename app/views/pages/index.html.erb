@@ -1,10 +1,15 @@
-<div class="jumbotron homepage">
+<div class="jumbotronhomepage">
+   <div class="container">
    <div class="row">
-      <div class="col-md-3">         
+      <div class="col-md-2">         
       </div>      
-      <div class="col-md-6">
-         <h1>与Native Speaker交换口语技能</h1>
-         <h3>Chinese/ English/ French/ Korean</h3>
+      <div class="col-md-8">
+         <div class="homepagetext" style="background: rgba(0,0,0,0.15)">            
+            <h1><%= t("homepageslogan") %></h1>
+            <a href="<%= members_path %>" class="link">
+               <h3><%= t("Chinese/ English/ French/ Korean") %></h3>
+            </a>
+         </div>
       </div>
 </div>
    

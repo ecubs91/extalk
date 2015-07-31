@@ -7,7 +7,7 @@
       </div>
       <div class="col-md-6">
    
-          <h2>Sign In</h2>
+          <h2><%= t("Sign In") %></h2>
              <ul class="input-list style-2 clearfix">             
                 <%= f.email_field :email, class: "input-list style-2", type:"text", placeholder: "Email Address" %>
              </ul>
@@ -21,7 +21,7 @@
     </div>
   <% end -%>
   <div class="actions">
-     <%= f.submit "Log in", class: "indexsearchbutton" %>
+     <%= f.submit t("Sign In"), class: "indexsearchbutton" %>
   </div>
 <% end %>
 

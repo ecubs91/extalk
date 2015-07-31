@@ -10,36 +10,78 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="form-group">
-     <%= f.label :Mother_Language %><br>
-     <%= f.collection_select :language_id, Language.all, :id, :name, {prompt: "Choose a cateogory"}, {class: "btn btn-default dropdown-toggle"} %>
-          </div>
-  <div class="field">
-    <%= f.label :wish_lang %><br>
-    <%= f.text_field :wish_lang %>
-  </div>
-  <div class="field">
-    <%= f.label :country %><br>
-    <%= f.text_field :country %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :interest %><br>
-    <%= f.text_field :interest %>
-  </div>
-  <div class="field">
-    <%= f.label :weixin %><br>
-    <%= f.text_field :weixin %>
-  </div>
-  <div class="field">
-    <%= f.label :skype %><br>
-    <%= f.text_field :skype %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<br>
+<div class="container">
+   <div class="row">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-8">
+         <div class="memberbox">
+            <h2 style="color:#69c2ec;padding-left:10px;"><%= t('Please fill in the following details') %></h2>
+            <div class="memberboxspecify">
+               <h3 style="color:#69c2ec"><%= t('Language Details') %></h3>
+              <div class="form-group">
+                 <h5><b><%= t('Mother Language') %></b></h5>                 
+                 <%= f.collection_select :language_id, Language.all, :id, :name, {prompt: "Choose a cateogory"}, {class: "btn btn-default dropdown-toggle"} %>
+              </div>
+              <div class="form-group">
+                <h5><b><%= t('Wish Language') %></b></h5>
+                <%= f.text_field :wish_lang, class: "form-control" %>
+              </div>
+            </div>
+            <div class="memberboxspecify">
+               <h3 style="color:#69c2ec"><%= t('Basic Info') %></h3>
+                 <div class="field">
+                   <h5><b><%= t('Picture') %></b></h5>
+                   <%= f.text_area :image_url, class: "form-control"  %>
+                 </div>
+                 <div class="field">
+                   <h5><b><%= t('Gender') %></b></h5>
+                   <%= f.collection_select :gender_id, Gender.all, :id, :name, {prompt: "Choose a cateogory"}, {class: "btn btn-default dropdown-toggle"} %>
+                 </div>
+                 <div class="form-group">
+                   <h5><b><%= t('Interests') %></b></h5>
+                   <%= f.text_field :interest, class: "form-control" %>
+                 </div>
+                 <div class="form-group">
+                    <h5><b><%= t('Description') %></b></h5>
+                   <%= f.text_field :description, class: "form-control" %>
+                 </div>
+               <div class="row">
+                  <div class="col-md-6">
+                      <div class="form-group">
+                      <h5><b><%= t('Country') %></b></h5>
+                      <%= f.text_field :country, class: "form-control" %>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group">
+                      <h5><b><%= t('City') %></b></h5>
+                      <%= f.text_field :city, class: "form-control" %>
+                    </div>
+                  </div>  
+               </div>                 
+               <div class="row">
+                  <div class="col-md-6">
+                      <div class="form-group">
+                         <h5><b><%= t('Wechat') %></b></h5>
+                         <%= f.text_field :weixin, class: "form-control" %>
+                       </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="form-group">
+                         <h5><b><%= t('Skype') %></b></h5>
+                         <%= f.text_field :skype, class: "form-control" %>
+                       </div>
+                  </div>  
+               </div>
+            </div>
+           
+           
+           <div class="actions">
+              <%= f.submit t("Submit"), class:"indexsearchbutton", style:"margin: 0px 0px 20px 30px;" %> <%= link_to t('Back'), members_path, class:"indexsearchbutton2" %>
+           </div>     
+         </div>         
+         <% end %>
+      </div>
+</div>

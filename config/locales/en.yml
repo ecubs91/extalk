@@ -1,23 +1,45 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+  homepageslogan: Language Exchange with Native Speakers for Free Learning
+  Chinese/ English/ French/ Korean: Chinese/ Spanish/ French/ Korean
+  Sign Up: Sign Up
+  Sign In: Sign In
+  Sign Out: Sign Out
+  Account Setting: Account Setting
+  Email Address: Email Address
+  Password: Password
+  New Password: New Password
+  Current Password: Current Password
+  Password Confirmation: Password Confirmation
+  First Name: First Name
+  Last Name: Last Name
+  Update: Update
+  Edit: Edit
+  Destroy: Delete
+  Cancel my account: Cancel my account
+  My Profile: My Profile
+  
+  Language: Language
+  Mother Language: Mother Language
+  Wish Language: Wish Language
+  Interests: Interests
+  Contact Details: Contact Details
+  Create Profile: Create Profile
+  Picture: Picture
+  Gender: Gender
+  Country: Country
+  City: City
+  Description: Description
+  Skype: Skype
+  Wechat: Wechat
+  Submit: Submit
+  Back: Back
+  
+  Please fill in the following details: Please fill in the following details
+  Basic Info: Basic Info
+  Language Details: Language Details
+  
+  Review: Review
+  Comment: Comment
+
+

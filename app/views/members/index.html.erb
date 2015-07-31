@@ -3,19 +3,13 @@
 <div class="row">
   <div class="col-md-3 col-sm-4">
      <div class="searchbox">
-     <div class="list-group">
-          <a href="#" class="list-group-item active" style="font-size:20px">
-            Language
-          </a>
-   <% Language.all.each do |language| %>
-          <div class="list-group-item">
-             <%= link_to language.name, members_path(language: language.name) %>
-          </div>
-          <% end %> 
-        </div>
-    
-        
-        <span class="glyphicon glyphicon-search" style="font-size:25px;color:#ea6779;margin-top:5px"></span>
+        <ul class="list-group">
+           <h3><%= t('Language') %> <span class="glyphicon glyphicon-search" style="font-size:25px;color:#ea6779;margin-top:5px"></span></h3>
+           <% Language.all.each do |language| %>
+           <li class="list-group-item"><%= link_to language.name, members_path(language: language.name) %></li> 
+          <% end %>               
+        </ul>         
+        <%= link_to t('Create Profile'), new_member_path, class:"btn btn-default" %>
      </div>            
   </div>
   <!------------- Right Panel for search results------------>
@@ -24,21 +18,22 @@
       <div class="memberbox">
          <div class="row">
         <div class="col-md-4 col-sm-4 col-xs-12">         
-            <div class="round-avatar"></div>
+           <div class="avatar" style="background-image: url(<%= member.image_url %>);background-size: 140px;width:140px;height:140px;margin-left:auto;margin-right:auto;"></div>
            <center>
              <h4><%= member.user.first_name %></h4>
               <h4><%= member.country %> | <%= member.city %></h4>
-           </center>
-           <% if member.user==current_user %>
-           <%= link_to 'Edit', edit_member_path(member) %>
-           <%= link_to t('Destroy'), member, style: "text-align:center", class: "linkbutton", method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
+              <a href="<%= member %>"></a>
+                <% if member.user==current_user %>
+                 <p><%= link_to t('Edit'), edit_member_path(member), class: "btn btn-default" %>
+                 <%= link_to t('Destroy'), member, style: "text-align:center", class: "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                <% end %>
+           </center>           
         </div>
         <div class="col-md-8 col-sm-8 col-xs-12">       
           <h4>
            <div class="row">
                 <div class="col-md-3">
-                   母语
+                   <%= t('Mother Language') %>
                 </div>
                 <div class="col-md-9">
                    <%= member.language.name %>
@@ -47,7 +42,7 @@
              <br>
            <div class="row">
                 <div class="col-md-3">
-                   希望学习
+                   <%= t('Wish Language') %>
                 </div>
                 <div class="col-md-9">
                    <%= member.wish_lang %>
@@ -56,7 +51,7 @@
              <br>
            <div class="row">
                 <div class="col-md-3">
-                   兴趣爱好
+                   <%= t('Interests') %>
                 </div>
                 <div class="col-md-9">
                    <%= member.interest %>
@@ -65,7 +60,7 @@
             <Br>
            <div class="row">
                 <div class="col-md-3">
-                   联系方式
+                   <%= t('Contact Details') %>
                 </div>
               <% if member.weixin.present? %> 
                 <div class="col-md-3">            
@@ -83,7 +78,7 @@
       </div>
      </div>
      <div class="row" style="background: #f5f5f5; margin-right: 10px; margin-left:1px; border-radius:5px;border-top: 2px solid #E5E5E5">
-        <p style="font-size:18px;text-align:center;padding-top:5px">""</p>
+        <p style="text-align:center;padding-top:5px">"<%= member.description %>"</p>
      </div>
      <br>
     <% end %>
@@ -97,4 +92,3 @@
 
 
 
-<%= link_to 'New Member', new_member_path %>

@@ -1,15 +1,28 @@
 Rails.application.routes.draw do
+
+  
+
+   scope "(:locale)", locale: /en|zh|ko/ do
+ 
+  
+  resources :genders
+
   resources :languages
 
-  resources :members
+      resources :members do
+         resources :reviews, except: [:show, :index]
+      end
 
   devise_for :users
+
+   end
   get 'pages/index'
   get 'pages/about'
   get 'pages/contact'
   get 'pages/howitworks'
 
   root 'pages#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,32 @@
+<%= form_for([@member, @review]) do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+      <% @review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="containermember"><br>   
+   <div class="row">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-6">
+         <div class="memberbox" style="padding: 15px 35px 15px 35px; margin: 20px 0px 20px 0px">
+            <h2 style="text-align:center"><%= t('Review') %> <%= @member.user.first_name %></h2>
+            <div class="form-group">
+             <h5><b><%= t('Comment') %></b></h5>
+             <%= f.text_area :comment, class: "form-control", :row => "6" %>
+           </div>
+            <div class="actions">
+               <%= f.submit t("Submit"), class: "indexsearchbutton" %>
+               <%= link_to t('Back'), member_path(@member), class: "indexsearchbutton2" %>
+           </div>
+         </div>
+      </div>
+   </div>  
+</div>
+<% end %>

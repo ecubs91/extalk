@@ -18,6 +18,14 @@ module Extalk
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    # config.i18n.default_locale = : 
+     config.i18n.default_locale = :en
+     def set_locale
+       I18n.locale = params[:locale] || I18n.default_locale
+     end
+
+     def default_url_options(options={})
+       { locale: I18n.locale }
+     end   
   end
 end

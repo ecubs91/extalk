@@ -16,6 +16,7 @@ class MembersController < ApplicationController
   end
 
   def show
+    @reviews = Review.where(member_id: @member.id)
     respond_with(@member)
   end
 
@@ -50,7 +51,7 @@ class MembersController < ApplicationController
     end
 
     def member_params
-      params.require(:member).permit(:language_id, :wish_lang, :country, :city, :interest, :weixin, :skype)
+       params.require(:member).permit(:language_id, :wish_lang, :image_url, :gender_id, :country, :city, :interest, :weixin, :skype, :description)
     end
    
     def check_user
