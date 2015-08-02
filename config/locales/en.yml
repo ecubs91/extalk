@@ -1,6 +1,7 @@
 en:
   hello: "Hello world"
   homepageslogan: Language Exchange with Native Speakers for Free Learning
+  Meet our native speakers: Meet our native speakers
   Chinese/ English/ French/ Korean: Chinese/ Spanish/ French/ Korean
   Sign Up: Sign Up
   Sign In: Sign In
@@ -20,11 +21,13 @@ en:
   My Profile: My Profile
   
   Language: Language
+  Language Choice: Language Choice
   Mother Language: Mother Language
   Wish Language: Wish Language
   Interests: Interests
   Contact Details: Contact Details
   Create Profile: Create Profile
+  Please add cloud hosted image url: Please add cloud hosted image url, e.g.
   Picture: Picture
   Gender: Gender
   Country: Country

@@ -1,6 +1,7 @@
 ko:
 
   homepageslogan: 원어민과 언어교환을 통한 무료학습
+  Meet our native speakers: 원어민 만나러 가기
   Chinese/ English/ French/ Korean: 중국어/ 영어/ 불어/ 스페인어
   Sign Up: 회원가입
   Sign In: 로그인
@@ -20,11 +21,13 @@ ko:
   My Profile: 프로필
   
   Language: 언어
+  Language Choice: 언어선택
   Mother Language: 모국어
   Wish Language: 희망언어
   Interests: 관심사항
   Contact Details: 연락처
   Create Profile: 프로필 만들기
+  Please add cloud hosted image url: 클라우드 저장된 이미지 url을 입력하세요, e.g.
   Picture: 사진
   Gender: 성별
   Country: 나라

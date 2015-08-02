@@ -22,7 +22,7 @@
                <h3 style="color:#69c2ec"><%= t('Language Details') %></h3>
               <div class="form-group">
                  <h5><b><%= t('Mother Language') %></b></h5>                 
-                 <%= f.collection_select :language_id, Language.all, :id, :name, {prompt: "Choose a cateogory"}, {class: "btn btn-default dropdown-toggle"} %>
+                 <%= f.collection_select :language_id, Language.all, :id, :name, {prompt: t("Language Choice")}, {class: "btn btn-default dropdown-toggle"} %>
               </div>
               <div class="form-group">
                 <h5><b><%= t('Wish Language') %></b></h5>
@@ -32,13 +32,13 @@
             <div class="memberboxspecify">
                <h3 style="color:#69c2ec"><%= t('Basic Info') %></h3>
                  <div class="field">
-                   <h5><b><%= t('Picture') %></b> Please add cloud hosted image url, e.g. <a href="http://7xkbd8.com1.z0.glb.clouddn.com/me.JPG" target="blank">http://7xkbd8.com1.z0.glb.clouddn.com/me.JPG</a></h5>
+                   <h5><b><%= t('Picture') %></b> <%= t('Please add cloud hosted image url') %> <a href="http://7xkbd8.com1.z0.glb.clouddn.com/me.JPG" target="blank">http://7xkbd8.com1.z0.glb.clouddn.com/me.JPG</a></h5>
                    <%= f.text_area :image_url, class: "form-control"  %>
                  </div>
-                 <div class="field">
+                 <!--<div class="field">
                    <h5><b><%= t('Gender') %></b></h5>
                    <%= f.collection_select :gender_id, Gender.all, :id, :name, {prompt: "Choose a cateogory"}, {class: "btn btn-default dropdown-toggle"} %>
-                 </div>
+                 </div>-->
                  <div class="form-group">
                    <h5><b><%= t('Interests') %></b></h5>
                    <%= f.text_field :interest, class: "form-control" %>
